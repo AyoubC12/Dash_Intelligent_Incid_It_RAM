@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* RAM Handling red: #E31836 → hsl(350, 79%, 49%) */
+    --background: 0 0% 97%;
+    --foreground: 0 0% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 11%;
+    --primary: 350 79% 49%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 350 15% 93%;
+    --secondary-foreground: 350 30% 22%;
+    --muted: 0 0% 93%;
+    --muted-foreground: 0 0% 44%;
+    --accent: 350 79% 49%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 350 79% 42%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 88%;
+    --input: 0 0% 91%;
+    --ring: 350 79% 49%;
+    --radius: 0.625rem;
+    /* Sidebar: deep dark red inspired by brand */
+    --sidebar: 350 40% 14%;
+    --sidebar-foreground: 0 0% 93%;
+    --sidebar-muted: 350 15% 45%;
+    --chart-1: 350 79% 49%;
+    --chart-2: 160 60% 42%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 213 94% 48%;
+    --chart-5: 280 60% 55%;
+  }
+
+  .dark {
+    --background: 350 10% 8%;
+    --foreground: 0 0% 92%;
+    --card: 350 10% 12%;
+    --card-foreground: 0 0% 92%;
+    --popover: 350 10% 12%;
+    --popover-foreground: 0 0% 92%;
+    --primary: 350 79% 58%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 350 10% 18%;
+    --secondary-foreground: 0 0% 80%;
+    --muted: 350 10% 16%;
+    --muted-foreground: 0 0% 54%;
+    --accent: 350 79% 58%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 350 70% 48%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 350 10% 22%;
+    --input: 350 10% 18%;
+    --ring: 350 79% 58%;
+    --sidebar: 350 35% 7%;
+    --sidebar-foreground: 0 0% 84%;
+    --sidebar-muted: 350 12% 38%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .sidebar-bg {
+    background: hsl(var(--sidebar));
+    color: hsl(var(--sidebar-foreground));
+  }
+
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--border)) transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 2px;
+  }
+}
